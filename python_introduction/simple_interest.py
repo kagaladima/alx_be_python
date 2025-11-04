@@ -1,8 +1,8 @@
 # A Python script that calculates the simple interest earned on an investment over a period of time
 
-principal = eval(input("Enter the principal amount: "))
-rate = eval(input ("Enter the annual interest rate (in %): "))
-time = eval(input("Enter the time the money is invested for (in years): "))
+principal = 1000
+rate = 0.05
+time = 3
 
 interest = principal * rate * time 
 
