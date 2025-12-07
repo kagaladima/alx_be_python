@@ -1,26 +1,25 @@
+
+# book_class.py
+
 class Book:
-    def __init__(self, title, author):
+    def __init__(self, title, author, year):
+        """Initialize book attributes."""
         self.title = title
         self.author = author
-        self._is_checked_out = False  # private attribute
+        self.year = year
 
-    def check_out(self):
-        """Mark the book as checked out if available."""
-        if not self._is_checked_out:
-            self._is_checked_out = True
-            return True
-        return False
+    def __del__(self):
+        """Destructor message."""
+        print(f"Deleting {self.title}")
 
-    def return_book(self):
-        """Mark the book as available again."""
-        if self._is_checked_out:
-            self._is_checked_out = False
-            return True
-        return False
+    def __str__(self):
+        """String representation."""
+        return f"{self.title} by {self.author}, published in {self.year}"
 
-    def is_available(self):
-        """Check if the book is available."""
-        return not self._is_checked_out
+    def __repr__(self):
+        """Official representation."""
+        return f"Book('{self.title}', '{self.author}', {self.year})"
+
 
 
 class Library:
